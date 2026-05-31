@@ -4,6 +4,7 @@ import '../controllers/contact_controller.dart';
 import '../models/contact_model.dart';
 import '../widgets/avatar_picker.dart';
 import '../utils/constants.dart';
+import '../routes/app_router.dart';
 
 class AddEditContactScreen extends StatefulWidget {
   const AddEditContactScreen({super.key});
@@ -78,7 +79,8 @@ class _AddEditContactScreenState extends State<AddEditContactScreen> {
     }
 
     if (success) {
-      Get.back(); // Pop screen and return to preceding view
+      // Navigate to home/contact list screen after successful save
+      Get.offNamed(AppRoutes.home);
     }
   }
 
